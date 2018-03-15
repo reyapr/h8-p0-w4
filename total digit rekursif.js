@@ -28,7 +28,7 @@ if(angka<=0){
 else if(angka<10){
   return Math.floor(angka/1)
 }
-else if(angka>10){
+else if(angka>=10){
  return (angka%10) + Math.floor(totalDigitRekursif(angka/10))
 }
 }
