@@ -1,30 +1,22 @@
 function hitungHuruf(kata) {
-  var splitKata = kata.split(' ')
-  var pembanding = []
+  var splitKata = kata.split(' ');
+  var maxNum = 0;
+  var result = '';
   for(var i=0;i<splitKata.length;i++){
-    var arr = '';
-    var huruf = ''
+    var count = 0;
     for(var j=0;j<splitKata[i].length;j++){
-      if(arr.indexOf(splitKata[i][j])==-1){
-        arr += splitKata[i][j]
-      }
-      else{
-        huruf += splitKata[i][j]
-      }
-    }
-    pembanding.push(huruf)
-  }
-  for(var k=0;k<pembanding.length;k++){
-    var value = false
-    for(var l=1;l<pembanding.length;l++){
-      if(pembanding[k].length<pembanding[l].length){
-        value = true
+      for(var k=j+1;k<splitKata[i].length;k++){
+        if(splitKata[i][j]==splitKata[i][k]){
+             count++
+         }
       }
     }
-      if(value==false){
-      return splitKata[k]
+    if(count>maxNum){
+      maxNum=count
+      result = splitKata[i]
     }
   }
+  return result
 }
 
 // TEST CASES
