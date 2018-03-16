@@ -28,6 +28,7 @@ function reverseWord (str) {
 }
 
 function setLowerUpperCase (str) {
+  
   var result = ''
   for(var i=0;i<str.length;i++){
     if(str[i] == str[i].toUpperCase()){
@@ -41,6 +42,9 @@ function setLowerUpperCase (str) {
 }
 
 function removeSpaces (str) {
+  if(str.length<5){
+    return 'Minimal karakter yang diinputkan adalah 5 karakter'
+  }
   var result = ''
   for(var i=0;i<str.length;i++){
     if(str[i]!=' '){
